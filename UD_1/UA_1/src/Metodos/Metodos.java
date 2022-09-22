@@ -4,28 +4,19 @@ public class Metodos {
 
 	public static void main(String[] args) {
 
-		//tresSaludos();
-		
-		
-		String mensaje = "Hola";
-		
-		String otroMensaje = mensaje;
-		
-		System.out.println(mensaje);
-		System.out.println(otroMensaje);
-		
-		mensaje  ="adios";
-		System.out.println(mensaje);
-		
-		System.out.println(otroMensaje);
-		System.out.println(otroMensaje);
+		tresSaludos();
+		tresSaludos();
 
 	}
-	
+
 	public static void tresSaludos() {
+		unSaludo();
+		unSaludo();
+		unSaludo();
+	}
+
+	public static void unSaludo() {
 		System.out.println("Hola, !buenos días!");
-		System.out.println("Hola, !buenos días!");
-		System.out.println("Hola, !buenos días!");
-		}
+	}
 
 }
