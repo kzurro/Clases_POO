@@ -82,6 +82,15 @@ public class EjemplosArraysClase {
 		for (int i = 0; i < mensajes.length; i++) {
 			System.out.println("mensaje de la rray mensajes en la posición " + i + "==>" + mensajes[i]);
 
+			/**
+			 * FOR MEJORADO
+			 */
+
+			for (String s : mensajesCopiados) {
+				System.out.println(s);
+
+			}
+
 		}
 
 	}
