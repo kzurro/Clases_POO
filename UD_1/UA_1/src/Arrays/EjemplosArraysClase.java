@@ -1,7 +1,7 @@
 package Arrays;
 
 import java.util.Arrays;
-
+import java.util.Iterator;
 
 public class EjemplosArraysClase {
 
@@ -75,6 +75,15 @@ public class EjemplosArraysClase {
 		/*
 		 * Generalmente el "desde, hasta" incluye el desde pero no el hasta.
 		 */
+
+		/*
+		 * Recorrer una array con un bucle for
+		 */
+		for (int i = 0; i < mensajes.length; i++) {
+			System.out.println("mensaje de la rray mensajes en la posición " + i + "==>" + mensajes[i]);
+
+		}
+
 	}
 
 }
