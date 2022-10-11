@@ -1,5 +1,7 @@
 package Clases;
 
+import java.util.Objects;
+
 public class Coche {
 
 	int numRuedas = 4;
@@ -68,6 +70,31 @@ public class Coche {
 	public Coche(String bastidor) {
 		this(0,bastidor,false);
 	}
+
+	@Override
+	public String toString() {
+		return "Coche [numRuedas=" + numRuedas + ", bastidor=" + bastidor + ", necesitaCarne=" + necesitaCarne
+				+ ", observaciones=" + observaciones + ", tipoMotor=" + tipoMotor + "]";
+	}
+
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Coche other = (Coche) obj;
+		return Objects.equals(bastidor, other.bastidor) && necesitaCarne == other.necesitaCarne
+				&& numRuedas == other.numRuedas && Objects.equals(observaciones, other.observaciones)
+				&& Objects.equals(tipoMotor, other.tipoMotor);
+	}
+	
+	
+	
+	
 	
 	
 	
