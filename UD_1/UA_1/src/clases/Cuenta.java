@@ -56,7 +56,8 @@ public class Cuenta {
 	 */
 	public void retirar(double cantidad) {
 		if (this.cantidad - cantidad < 0) {
-			this.cantidad = 0;
+			System.out.println("El máximo que se va a retirar es: " + getCantidad());
+			setCantidad(0);;
 		} else {
 			this.cantidad -= cantidad;
 		}
