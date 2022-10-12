@@ -1,4 +1,4 @@
-package Clases;
+package clases;
 
 public class Motor {
 	String combustible;
