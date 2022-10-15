@@ -2,7 +2,6 @@ package clases;
 
 public class Password {
 
-	//
 	private final static int LONG_DEF = 8;
 
 	// atributos de la instancia ==> son privados porque no se desea que nadie
@@ -81,30 +80,29 @@ public class Password {
 			// Generamos un numero aleatorio, segun este elige si añadir una minuscula,
 			// mayuscula o numero
 			int eleccion = ((int) Math.floor(Math.random() * 3 + 1));
-		
+
 			if (eleccion == 1) {
 				char minusculas = (char) ((int) Math.floor(Math.random() * (123 - 97) + 97));
 				password += minusculas;
-				S
+
 			} else {
 				if (eleccion == 2) {
 					char mayusculas = (char) ((int) Math.floor(Math.random() * (91 - 65) + 65));
 					password += mayusculas;
-					
+
 				} else {
 					char numeros = (char) ((int) Math.floor(Math.random() * (58 - 48) + 48));
 					password += numeros;
-					
+
 				}
 			}
 		}
-		System.out.println(password);
 		return password;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Password = Longitud " + getLongitud() + ", Contraseña:" + getContraseña();
+		return " Longitud: " + getLongitud() + ",\t Contraseña: " + getContraseña();
 	}
 
 }
