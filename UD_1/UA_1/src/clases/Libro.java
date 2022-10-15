@@ -53,6 +53,15 @@ public class Libro {
 
 	}
 
+	public static String masPaginas(Libro libro, Libro otroLibro) {
+		return libro.getNumeroPaginas() > otroLibro.getNumeroPaginas()
+				? libro.getTitulo() + "tiene más páginas que " + otroLibro.getTitulo()
+				: otroLibro.getNumeroPaginas() == libro.getNumeroPaginas()
+						? "\"" + otroLibro.getTitulo() + "\"" + " tiene el mismo número de páginas que " + "\""
+								+ libro.getTitulo() + "\""
+						: otroLibro.getTitulo() + "tiene más páginas que " + libro.getTitulo();
+	}
+
 	// métodos Sobrescritos
 	@Override
 	public String toString() {
