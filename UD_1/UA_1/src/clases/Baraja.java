@@ -1,19 +1,18 @@
 package clases;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Baraja {
 
 	private Carta cartas[];
-	private String tipoBaraja;
+	private TipoBaraja tipoBaraja;
 	private int posSiguienteCarta;
 
 	public Carta[] getCartas() {
 		return cartas;
 	}
 
-	public String getTipoBaraja() {
+	public TipoBaraja getTipoBaraja() {
 		return tipoBaraja;
 	}
 
@@ -29,21 +28,44 @@ public class Baraja {
 		this.cartas = cartas;
 	}
 
-	protected void setTipoBaraja(String tipoBaraja) {
+	protected void setTipoBaraja(TipoBaraja tipoBaraja) {
 		this.tipoBaraja = tipoBaraja;
 	}
 
 	public Baraja() {
-		setTipoBaraja("Española");
+		Palo[] palosEspañola = {new Palo("OROS"), new Palo("COPAS"), new Palo("ESPADAS"), new Palo("BASTOS")};
+		setTipoBaraja(new TipoBaraja("Española", 40, palosEspañola ));
 		crearBarajaEspañola();
 		setPosSiguienteCarta(0);
+	}
+	
+	public Baraja(TipoBaraja tipoBaraja) {
+		crearBaraja(tipoBaraja);
+		setPosSiguienteCarta(0);
+		
+	}
+	
+	
+	//crear cualquier baraja
+	
+	private void crearBaraja(TipoBaraja tipoBaraja) {
+		setCartas(new Carta [tipoBaraja.getNumeroCartas()]);
+		int contador = 0;
+		
+		for (Palo palo : tipoBaraja.getPalos()) {
+			for (int i = 1; i <= tipoBaraja.getNumeroCartas()/tipoBaraja.getPalos().length; i++) {
+				getCartas()[contador] = new Carta(i, palo);
+				contador++;
+			}
+		}
 	}
 
 	// Crear una baraja nueva española
 	private void crearBarajaEspañola() {
 		setCartas(new Carta[40]);
 		int contador = 0;
-		for (String palo : Carta.getPalos()) {
+		
+		for (Palo palo : tipoBaraja.getPalos()) {
 			for (int i = 1; i <= 12; i++) {
 				if (i == 8 || i == 9) {
 					continue;

@@ -7,7 +7,7 @@ public class Carta {
 	// ATRIBUTOS
 
 	private int numero;
-	private String palo;
+	private Palo palo;
 
 	// Métodos accesores
 
@@ -19,7 +19,7 @@ public class Carta {
 		return numero;
 	}
 
-	public String getPalo() {
+	public Palo getPalo() {
 		return palo;
 	}
 
@@ -27,7 +27,7 @@ public class Carta {
 		this.numero = numero;
 	}
 
-	protected void setPalo(String palo) {
+	protected void setPalo(Palo palo) {
 		this.palo = palo;
 	}
 
@@ -36,7 +36,7 @@ public class Carta {
 
 	}
 
-	public Carta(int numero, String palo) {
+	public Carta(int numero, Palo palo) {
 		setNumero(numero);
 		setPalo(palo);
 
