@@ -1,6 +1,6 @@
 package interfaces;
 
-public interface Arrancable {
+public interface Arrancable extends Reparable {
 
 	public void arrancar();
 

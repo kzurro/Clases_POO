@@ -1,6 +1,6 @@
 package interfaces;
 
-public class Coche extends Vehiculo {
+public class Coche extends Vehiculo implements Pintable {
 
 	final static int RUEDAS_DEF = 4;
 
@@ -59,6 +59,18 @@ public class Coche extends Vehiculo {
 	public void arrancar() {
 		System.out.println("Soy un " + Coche.class.getSimpleName() + " estoy arrancando...");
 
+	}
+
+	@Override
+	public boolean esReparable() {
+		return getMotor() != 0;
+	}
+
+	@Override
+	public String cambiarColor(String colorCambio) {
+		String mensaje = "Yo soy " + getColor() + ", y me quieren cambiar " + colorCambio;
+		setColor(colorCambio);
+		return mensaje;
 	}
 
 }

@@ -53,4 +53,9 @@ public class Moto extends Vehiculo {
 
 	}
 
+	@Override
+	public boolean esReparable() {
+		return getCilindrada() != 0;
+	}
+
 }
