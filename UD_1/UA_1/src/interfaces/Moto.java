@@ -48,12 +48,6 @@ public class Moto extends Vehiculo {
 	}
 
 	@Override
-	public void arrancar() {
-		System.out.println("Soy una " + Moto.class.getSimpleName() + " estoy arrancando...");
-
-	}
-
-	@Override
 	public boolean esReparable() {
 		return getCilindrada() != 0;
 	}

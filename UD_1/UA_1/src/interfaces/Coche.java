@@ -56,12 +56,6 @@ public class Coche extends Vehiculo implements Pintable {
 	}
 
 	@Override
-	public void arrancar() {
-		System.out.println("Soy un " + Coche.class.getSimpleName() + " estoy arrancando...");
-
-	}
-
-	@Override
 	public boolean esReparable() {
 		return getMotor() != 0;
 	}
