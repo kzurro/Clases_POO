@@ -2,6 +2,8 @@ package colecciones;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import herencia.Electrodomestico;
@@ -145,7 +147,42 @@ public class ColeccionesApp {
 		System.out.println("La lista electrodomesticos  NO es igual que la lista televisiones "
 				+ electrodomesticos.equals(televisiones));
 
-		// imprimir la lista
+		// ORDENAR COLECCIONES
+		// static void sort(List<T> lista):
+		System.out.println("ORDENAR COLECCIONES");
+
 		electrodomesticos.forEach(System.out::println);
+
+		// ordenar por criterio natural que es pasando null en el método y va a buscar
+		// como hemos implementado el metodo compare en la Clase Electrodomestico
+		electrodomesticos.sort(null);
+		System.out.println("*******************************");
+		electrodomesticos.forEach(System.out::println);
+		System.out.println("*******************************");
+		
+		//Podemos implementar en el mismo método un nuevo comparador para ordenar por otro criterio 
+		electrodomesticos.sort(new Comparator<Electrodomestico>() {
+
+			@Override
+			public int compare(Electrodomestico o1, Electrodomestico o2) {
+
+				return (int) (o1.getPrecioBase() - o2.getPrecioBase());
+			}
+		});
+		
+		 electrodomesticos.forEach(System.out::println);
+		System.out.println("*******************************");
+		
+		/*
+		 *hay una tercera forma que es creando un nuevo comparador en una clase externa.
+		 *Esto se usaraá cuando se vaya a utlizar varais veces  
+		 */
+		
+		ComaparadorPesos comaparadorPesos  = new ComaparadorPesos();
+		
+		electrodomesticos.sort(comaparadorPesos);
+		
+		// imprimir la lista
+		 electrodomesticos.forEach(System.out::println);
 	}
 }

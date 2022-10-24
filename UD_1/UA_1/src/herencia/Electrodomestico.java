@@ -1,6 +1,6 @@
 package herencia;
 
-public class Electrodomestico {
+public class Electrodomestico implements Comparable<Electrodomestico> {
 
 	// Constantes
 
@@ -168,10 +168,23 @@ public class Electrodomestico {
 
 	@Override
 	public String toString() {
-		return this.getClass().getSimpleName() + " " + getColor() + ", Tipo " + getConsumoEnergetico()
-				+ ", precio  " + precioFinal() + " €";
+		return this.getClass().getSimpleName() + " " + getColor() + ", Tipo " + getConsumoEnergetico() + ", precio  "
+				+ precioFinal() + " €";
 	}
-	
-	
+
+	@Override
+	public int compareTo(Electrodomestico o) {
+		int resultado;
+		if (getConsumoEnergetico() > o.getConsumoEnergetico()) {
+			resultado = 1;
+		}
+		if (getConsumoEnergetico() < o.getConsumoEnergetico()) {
+			resultado = -1;
+		} else {
+			resultado = 0;
+		}
+
+		return resultado;
+	}
 
 }
