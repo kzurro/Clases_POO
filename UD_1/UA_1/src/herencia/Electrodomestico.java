@@ -166,4 +166,12 @@ public class Electrodomestico {
 		return precioBase + plus;
 	}
 
+	@Override
+	public String toString() {
+		return this.getClass().getSimpleName() + " " + getColor() + ", Tipo " + getConsumoEnergetico()
+				+ ", precio  " + precioFinal() + " €";
+	}
+	
+	
+
 }
