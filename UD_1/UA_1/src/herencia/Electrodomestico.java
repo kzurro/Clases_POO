@@ -169,7 +169,7 @@ public class Electrodomestico implements Comparable<Electrodomestico> {
 	@Override
 	public String toString() {
 		return this.getClass().getSimpleName() + " " + getColor() + ", Tipo " + getConsumoEnergetico() + ", precio  "
-				+ precioFinal() + " €";
+				+ precioFinal() + " € y pesa " + getPeso() + " kg";
 	}
 
 	@Override
