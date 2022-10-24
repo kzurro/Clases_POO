@@ -159,8 +159,9 @@ public class ColeccionesApp {
 		System.out.println("*******************************");
 		electrodomesticos.forEach(System.out::println);
 		System.out.println("*******************************");
-		
-		//Podemos implementar en el mismo método un nuevo comparador para ordenar por otro criterio 
+
+		// Podemos implementar en el mismo método un nuevo comparador para ordenar por
+		// otro criterio
 		electrodomesticos.sort(new Comparator<Electrodomestico>() {
 
 			@Override
@@ -169,20 +170,57 @@ public class ColeccionesApp {
 				return (int) (o1.getPrecioBase() - o2.getPrecioBase());
 			}
 		});
-		
-		 electrodomesticos.forEach(System.out::println);
+
+		electrodomesticos.forEach(System.out::println);
 		System.out.println("*******************************");
-		
+
 		/*
-		 *hay una tercera forma que es creando un nuevo comparador en una clase externa.
-		 *Esto se usaraá cuando se vaya a utlizar varais veces  
+		 * hay una tercera forma que es creando un nuevo comparador en una clase
+		 * externa. Esto se usaraá cuando se vaya a utlizar varais veces
 		 */
-		
-		ComaparadorPesos comaparadorPesos  = new ComaparadorPesos();
-		
+
+		ComaparadorPesos comaparadorPesos = new ComaparadorPesos();
+
 		electrodomesticos.sort(comaparadorPesos);
-		
+
 		// imprimir la lista
-		 electrodomesticos.forEach(System.out::println);
+		electrodomesticos.forEach(System.out::println);
+
+		// MÉTODOS DE BUSQUEDA
+		System.out.println("MÉTODOS DE BÚSQUEDA");
+
+		// binarySearch() => Búsqueda Binaria. Devuelve indice de la b´suqueda
+
+		System.out.println(Collections.binarySearch(electrodomesticos, television1));
+
+		// static void swap(List<?> lista, int i, int j) ​intercambia los nodos con
+		// índices i y j entre sí.
+
+		Collections.swap(electrodomesticos, 0, 8);
+
+		// static boolean replaceAll(List<T> lista, valorAntiguo, T valorNuevo)
+		// reemplaza el nodo valorAntiguo, en todos los lugares en que aparezca en la
+		// lista, por valorNuevo.
+
+		Collections.replaceAll(electrodomesticos, lavadora3, television3);
+
+		/*
+		 * static void fill(List<? super T> lista, T valorDeRelleno) sustituye todos los
+		 * valores de los nodos de la lista por el de valorDeRelleno
+		 */
+
+		Collections.fill(electrodomesticos, television2);
+
+		/*
+		 * static void copy (List<? super T> destino, List<? extends T> origen) copia
+		 * los elementos de la lista origen en la lista destino, empezando por el
+		 * principio y sobrescribiendo
+		 */
+
+		otrosElectrodomesticos.addAll(listaElectrodomesticos);
+
+		Collections.copy(electrodomesticos, otrosElectrodomesticos);
+		otrosElectrodomesticos.forEach(System.out::println);
+
 	}
 }
