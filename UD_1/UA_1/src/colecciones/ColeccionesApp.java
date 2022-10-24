@@ -209,7 +209,7 @@ public class ColeccionesApp {
 		 * valores de los nodos de la lista por el de valorDeRelleno
 		 */
 
-		Collections.fill(electrodomesticos, television2);
+		// Collections.fill(electrodomesticos, television2);
 
 		/*
 		 * static void copy (List<? super T> destino, List<? extends T> origen) copia
@@ -217,10 +217,42 @@ public class ColeccionesApp {
 		 * principio y sobrescribiendo
 		 */
 
-		otrosElectrodomesticos.addAll(listaElectrodomesticos);
+//		otrosElectrodomesticos.addAll(listaElectrodomesticos);
+//
+//		Collections.copy(electrodomesticos, otrosElectrodomesticos);
 
-		Collections.copy(electrodomesticos, otrosElectrodomesticos);
+		// OTROS METODOS DE INTERES
+
+		System.out.println("OTROS MÉTODOS");
+
+		/*
+		 * static void shuffle(List<?> lista)=> desordena los elementos de lista.
+		 */
+
+		Collections.shuffle(electrodomesticos);
+
+		otrosElectrodomesticos.forEach(System.out::println);
+		/*
+		 * void reverse (List<?> lista)=> invierte lista, colocando los nodos en orden
+		 * inverso
+		 */
+		System.out.println("*******************************");
+		Collections.reverse(electrodomesticos);
+
 		otrosElectrodomesticos.forEach(System.out::println);
 
+		/*
+		 * static T max(Collection<? extends T> col)=> nos devuelve el valor máximo de
+		 * una colección según el orden natural (no tiene por qué ser una lista)
+		 */
+		System.out.println("*******************************");
+		System.out.println(Collections.max(electrodomesticos));
+
+		/*
+		 * static T max(Collection<? extends T> col, Comparator<? super T> comp)=>
+		 * devuelve el máximo utilizando comp como criterio de comparación
+		 */
+
+		System.out.println(Collections.max(electrodomesticos, comaparadorPesos));
 	}
 }
