@@ -3,6 +3,7 @@ package comparable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 
 public class SortMain {
@@ -27,6 +28,21 @@ public class SortMain {
 		listaObjetos.sort(null);
 
 		listaObjetos.forEach(System.out::println);
+
+		listaObjetos.sort(new Comparator<Objeto>() {
+
+			@Override
+			public int compare(Objeto o1, Objeto o2) {
+
+				return o1.getMensaje().compareTo(o2.getMensaje());
+			}
+		});
+
+		CompardorString comparador = new CompardorString();
+
+		listaObjetos.sort(comparador);
+
+		listaObjetos.sort((o1, o2) -> o1.compareTo(o2));
 
 	}
 

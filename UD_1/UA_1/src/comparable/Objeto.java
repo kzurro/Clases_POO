@@ -1,7 +1,5 @@
 package comparable;
 
-
-
 public class Objeto implements Comparable<Objeto> {
 	int numero;
 	String mensaje;
