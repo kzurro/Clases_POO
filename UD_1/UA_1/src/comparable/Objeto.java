@@ -1,6 +1,8 @@
 package comparable;
 
-public class Objeto {
+
+
+public class Objeto implements Comparable<Objeto> {
 	int numero;
 	String mensaje;
 	char letra;
@@ -52,6 +54,12 @@ public class Objeto {
 	public String toString() {
 		return "getNumero" + getNumero() + ", getMensaje=" + getMensaje() + ", getLetra=" + getLetra() + ", isBolean="
 				+ isBolean();
+	}
+
+	@Override
+	public int compareTo(Objeto o) {
+
+		return o.getMensaje().compareTo(getMensaje());
 	}
 
 }
