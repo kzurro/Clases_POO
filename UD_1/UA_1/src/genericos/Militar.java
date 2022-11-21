@@ -1,6 +1,6 @@
 package genericos;
 
-public class Militar implements Identificable<Integer> {
+public class Militar implements Identificable<Integer>, Alistable, ConRazocinio {
 	private int numEscalafon;
 
 	public int getNumEscalafon() {
@@ -23,5 +23,17 @@ public class Militar implements Identificable<Integer> {
 	public Integer getId() {
 		return getNumEscalafon();
 	}
+
+	@Override
+	public String getPuesto() {
+		return "Servir a la Patria";
+	}
+
+	@Override
+	public String getPensamiento() {
+		return "Lo importante es la misión";
+	}
+
+
 
 }

@@ -1,6 +1,6 @@
 package genericos;
 
-public class Vehiculo implements Identificable<String> {
+public class Vehiculo implements Identificable<String>, Alistable {
 
 	String matricula;
 
@@ -20,5 +20,12 @@ public class Vehiculo implements Identificable<String> {
 	public String getId() {
 		return getMatricula();
 	}
+
+	@Override
+	public String getPuesto() {
+		return "Llevar Tropas";
+	}
+
+	
 
 }
