@@ -21,4 +21,11 @@ public class Perro<T> implements Identificable<T> {
 		return getIdentificador();
 	}
 
+	@Override
+	public String toString() {
+		return "Perro [getId()=" + getId() + "]";
+	}
+	
+	
+
 }
